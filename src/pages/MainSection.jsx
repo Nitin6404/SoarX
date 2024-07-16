@@ -2,12 +2,30 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import icon from "../assets/icon.png"; 
+import { TypewriterEffect } from '../components/ui/typewriter-effect'
 
 const navigation = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact Us', href: '/contact' },
 ]
+
+const words = [
+    {
+      text: "What",
+    },
+    {
+      text: "is",
+    },
+    {
+      text: "SoarX JMI",
+      className: "text-dark-jmi-green",
+    },
+    {
+        text: "?",
+        className: "text-dark-jmi-green",
+    }
+  ];
 
 export default function MainSection() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -98,8 +116,11 @@ export default function MainSection() {
                     <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                     </div>
                     <div className="text-center">
-                        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                            What is SoarX JMI ?
+                        <h1 className="">
+                            <TypewriterEffect 
+                            words={words}
+                            cursorClassName='hidden'
+                            />  
                         </h1>
                         <p className="mt-6 text-lg leading-8 text-text-color font-normal">
                             SoarX JMI is a thriving Student branch of SoarX Nationwide community
